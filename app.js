@@ -75,4 +75,13 @@ function caculateTotal(price) {
   totalAmount.innerHTML = total
 }
 
+// 4.送出訂單
+function submitOrder() {
+  alert(`感謝你的購買： 總金額${total}`)
+
+}
+
+// 5.reset
+
 menu.addEventListener('click', addCart)
+button.addEventListener('click', submitOrder)
