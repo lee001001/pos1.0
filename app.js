@@ -66,6 +66,13 @@ function addCart(event) {
   cart.innerHTML += `
   <li class="list-group-item">${name} X 1 小計：${price}</li>
   `
+  caculateTotal(price)
+}
+
+// 3.計算總金額
+function caculateTotal(price) {
+  total += price
+  totalAmount.innerHTML = total
 }
 
 menu.addEventListener('click', addCart)
