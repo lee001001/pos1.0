@@ -5,7 +5,7 @@ const totalAmount = document.querySelector('#total-amount')
 const button = document.querySelector('#submit-button')
 
 // 菜單資料
-let productData = [
+const productData = [
   {
     id: 'product-1',
     imgUrl:
@@ -37,6 +37,8 @@ let productData = [
 ]
 // ======= 請從這裡開始 =======
 // 1.使用菜單產生 menu 區塊
+const cartItem = []
+let total = 0
 productData.forEach(product => {
   menu.innerHTML += `
   <div class="col-3">
@@ -45,7 +47,7 @@ productData.forEach(product => {
             src="${product.imgUrl}"
             class="card-img-top" alt="...">
           <div class="card-body">
-            <h5 class="card-title""${product.name}"</h5>
+            <h5 class="card-title">${product.name}</h5>
             <p class="card-text">${product.price}</p>
             <a id=${product.id} href="#" class="btn btn-primary">加入購物車</a>
           </div>
@@ -54,3 +56,16 @@ productData.forEach(product => {
   `
 })
 // 2.加入購物車
+function addCart(event) {
+  const id = event.target.id
+  // 取得id找出產品資訊
+  const addedProduct = productData.find(product => product.id === id)
+  const name = addedProduct.name
+  const price = addedProduct.price
+
+  cart.innerHTML += `
+  <li class="list-group-item">${name} X 1 小計：${price}</li>
+  `
+}
+
+menu.addEventListener('click', addCart)
