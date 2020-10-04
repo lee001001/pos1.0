@@ -86,7 +86,6 @@ function reset() {
   total = 0
   cart.innerHTML = ''
   totalAmount.innerHTML = '--'
-
 }
 
 menu.addEventListener('click', addCart)
