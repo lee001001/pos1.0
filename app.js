@@ -47,7 +47,7 @@ productData.forEach(product => {
           <div class="card-body">
             <h5 class="card-title""${product.name}"</h5>
             <p class="card-text">${product.price}</p>
-            <a href="#" class="btn btn-primary">加入購物車</a>
+            <a id=${product.id} href="#" class="btn btn-primary">加入購物車</a>
           </div>
         </div>
       </div>
