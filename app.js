@@ -78,10 +78,16 @@ function caculateTotal(price) {
 // 4.送出訂單
 function submitOrder() {
   alert(`感謝你的購買： 總金額${total}`)
-
+  reset()
 }
 
 // 5.reset
+function reset() {
+  total = 0
+  cart.innerHTML = ''
+  totalAmount.innerHTML = '--'
+
+}
 
 menu.addEventListener('click', addCart)
 button.addEventListener('click', submitOrder)
